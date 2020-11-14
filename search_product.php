@@ -1,5 +1,7 @@
-<html><body>Search function.</body></html><br />
+<html><body><h1>Search results</h1><br />
 
+
+<form action="add_to_basket.php" method="POST">
 <?php
 
 echo "<p>You searched for:<br />Search terms: \"".$_POST['search_terms'] ."\" by: ". $_POST["search-by"]."</p><br />";
@@ -27,11 +29,12 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0)
 {
   // output data of each row
+  $i = 0;
 	while($row = mysqli_fetch_assoc($result))
 	{
 //	echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Category: " . $row["cat"]. " - Price: " . $row["price"]. " credits\n";
 		if($row[$_POST['search-by']] === $_POST['search_terms']) /// here you can determine what you are searching for
-			echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Category: " . $row["cat"]. " - Price: " . $row["price"]. " credits <br />";
+			echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Category: " . $row["cat"]. " - Price: " . $row["price"]. " credits <input type=\"checkbox\" id=\"selection\" name=\"droid[]\" value=\"".$row["id"]."\"> <br />";
 	}
 }
 else
@@ -44,4 +47,6 @@ mysqli_close($conn); // close connection.
 else
 	echo "POST if no workey <br />";
 ?>
-
+<input type="submit" value="Add to cart">
+</form>
+</body></html>
