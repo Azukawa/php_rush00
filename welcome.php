@@ -25,7 +25,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<li style="float:right"><a href="#logout">LogOut</a></li>
 </ul>
 <div>
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to Jawa Junkyard.</h1>
+        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to the Jawa Junkyard. These ARE the droids you're looking for!</h1>
 	</div>
 	<form action="search_product.php" method="POST">
 			Search products: <input type="text" name="search_terms" value="" />

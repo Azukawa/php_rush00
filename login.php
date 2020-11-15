@@ -98,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div>
         <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
+        <p>Use your username and password to to log in.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>>
                 <label>Username</label>
@@ -113,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div>
                 <input type="submit" value="Login">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p>Don't have an account with us yet? <a href="register.php">Sign up now</a>!</p>
         </form>
     </div>    
 </body>

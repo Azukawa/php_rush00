@@ -1,14 +1,14 @@
 <?php
 session_start();
 ////print_r($_POST['basket_item']);
-if ($_POST["submit"] === 'Delete from basket' && $_POST['basket_item'])
+/*if ($_POST["submit"] === 'Delete from basket' && $_POST['basket_item'])
 	{
 	echo "Basket item sent: <br />";
 	foreach ($_POST['basket_item'] as $elem)
 	{
 		echo "$elem<br />";
 	}
-}
+}*/
 echo "<p>You want to remove: ".$_POST['basket_item']." from your basket.</p><br />";
 /*foreach ($droid as $elem)
 {
@@ -23,7 +23,7 @@ echo "<p>You want to remove: ".$_POST['basket_item']." from your basket.</p><br 
 
 echo "Attempting to remove ".print_r($_POST['basket_item'])."<br />";
 //unset($_SESSION['basket'][$_POST['basket_item']]);
-$_SESSION['basket']=array_diff($_SESSION['basket'],$_POST['basket_item']);
+$_SESSION['basket'] = array_diff($_SESSION['basket'],$_POST['basket_item']);
 
 echo "<p>Product(s) in basket after removing items:</p><br />";
 foreach ($_SESSION['basket'] as $elem)
