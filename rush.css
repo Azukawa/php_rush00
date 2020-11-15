@@ -1,5 +1,6 @@
 body{ 
-	font: 14px sans-serif; 
+	font: 14px sans-serif;
+   background-color: #FFE9A5;	
 }
 
 .wrapper{ 
@@ -31,17 +32,17 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #C4C4C4;  /*this is for navbar color*/
 }
 
 li {
   float: left;
-  border-right: 1px solid #bbb;
+  border-right: 1px solid #FFE9A5;
 }
 
 li a {
   display: block;
-  color: white;		/* change this to change the navbar text color */
+  color: #FFE9A5;		/* change this to change the navbar text color */
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -49,14 +50,21 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover:not(.active){
-  background-color: #111;
+  background-color: #dbdbdb;
 }
 .active {
   font-weight: bold;
-  background-color: white;
-  color: #444;
+  background-color: #FFE9A5;
+  color: #C4C4C4;
 }
 
 li:last-child {
   border-right: none;
 }
+
+/*
+	tan = #FFE9A5
+	grey = #C4C4C4
+	light grey= 
+ 
+ */
