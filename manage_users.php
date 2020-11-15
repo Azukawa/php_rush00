@@ -92,9 +92,6 @@ mysqli_close($conn);
 
 <input type="submit" value="Delete user">
 </form>
-<form action="delete_user.php" method="POST">
-
-</form>
 
 </body></html>
 

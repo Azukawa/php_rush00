@@ -75,17 +75,16 @@ if (!$conn)
 {
   die ("Connection failed: " . mysqli_connect_error());
 }
-$del_user = $_POST['del_order'];
-print_r($del_user);
+$del_order = $_POST['del_order'];
+print_r($del_order);
 
 
-foreach($del_user as $elem) 
+foreach($del_order as $elem) 
 {
-	$sql="DELETE FROM orders WHERE id = $elem";
-	echo $sql."<br />";
+	$sql="DELETE FROM orders WHERE id = '$elem'";
 	if (mysqli_query($conn, $sql))
 	{
-	echo "Record deleted successfully";
+		echo "<p>Record deleted successfully!</p>";
 	}
 	else
 	{
