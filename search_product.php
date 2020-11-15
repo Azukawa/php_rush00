@@ -20,9 +20,6 @@ echo "<h2>You searched for:</h2>Search terms: \"".$_POST['search_terms'] ."\" by
 
 if ($_POST["submit"] === 'Search' && $_POST['search_terms'] && $_POST['search-by'])
 {
-	//$_POST['search terms'] = string searched for
-//$servername = "localhost"; useless crap.
-//echo "In search function if <br />";
 $username = "root";
 $password = "mampba";
 $dbname = "droids";
@@ -34,7 +31,7 @@ if (!$conn)
 {
   die ("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT id, name, year, price FROM droids";
+$sql = "SELECT id, name, year, short, price FROM droids";
 //echo $sql."<br />";
 $result = mysqli_query($conn, $sql);
 //print_r ($result);
@@ -48,7 +45,8 @@ if (mysqli_num_rows($result) > 0)
 	{
 //	echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Category: " . $row["cat"]. " - Price: " . $row["price"]. " credits\n";
 		if($row[$_POST['search-by']] === $_POST['search_terms']) /// here you can determine what you are searching for
-			echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. " credits <input type=\"checkbox\" id=\"selection\" name=\"droid[]\" value=\"".$row["id"]."\"> <br />";
+		if ($row["short"] == 1)
+			echo $row["short"]."id: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. " credits <input type=\"checkbox\" id=\"selection\" name=\"droid[]\" value=\"".$row["id"]."\"> <br />";
 	}
 }
 else

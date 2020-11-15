@@ -26,22 +26,24 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 		<span>Already have an account? <a href="login.php">Login here</a>.</span>
 		<span>Don't have an account? <a href="register.php">Sign up now</a>.</span>
 		<form action="search_product.php" method="POST">
+			
 			Search products: <input type="text" name="search_terms" value="" />
 			Search by: <select name="search-by" id="search-by">
 				<option value="name">Name</option>
 				<option value="id">ID</option>
 				<option value="price">Price</option>
 			  </select>
+			Short<input type="checkbox" id="selection" name="category[]" value="short">
+			Tall<input type="checkbox" id="selection" name="category[]" value="tall">
+			Round<input type="checkbox" id="selection" name="category[]" value="round">
+			Protocol<input type="checkbox" id="selection" name="category[]" value="protocol">
+			Astromech<input type="checkbox" id="selection" name="category[]" value="astromech">
 			  <input type="submit" name="submit" value="Search" />
 <form action="add_to_basket.php" method="POST">
-
 <br/><br/>
-Short<input type="checkbox" id="selection" name="[short]" value="[category_picked]"> 		
+<form action="add_to_basket.php" method="POST">
+<br/><br/>
 
-Tall<input type="checkbox" id="selection" name="[tall]" value="[category_picked]">			
-Round<input type="checkbox" id="selection" name="[round]" value="[category_picked]">			
-xxx<input type="checkbox" id="selection" name="[category]" value="[category_picked]">			
-yyy<input type="checkbox" id="selection" name="[category]" value="[category_picked]">			
 <br/><br/>
 <?php
 //////////////////////
@@ -60,11 +62,8 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0)
 {
 	while($row = mysqli_fetch_assoc($result))
-	{
-	if($row)	
 		echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. " credits <input type=\"checkbox\" id=\"selection\" name=\"droid[]\" value=\"".$row["id"]."\"> <br />";
-	
-	}
+}
 mysqli_close($conn);
 //////////////////////////
 ////////////////////////
