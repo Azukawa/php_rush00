@@ -37,7 +37,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				<option value="name">Name</option>
 				<option value="id">ID</option>
 				<option value="year">Year</option>
-				<option value="cat">Category</option>
 				<option value="price">Price</option>
 			  </select>
 			  <input type="submit" name="submit" value="Search" />

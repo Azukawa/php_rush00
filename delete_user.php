@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
     <meta charset="UTF-8">
-    <title>User management</title>
+    <title>User deleted!</title>
     <link rel="stylesheet" href="rush.css">
 </head>
-<body>
-<ul>
+<body><ul>
 	<li><a class="active"  href="#droids">Droids</a></li>
 	<li><a href="#search">Search</a></li>
 	<li><a href="#cart">Cart</a></li>
 	<li style="float:right"><a href="#logout">LogOut</a></li>
-</ul>	
-<h1>User Management</h1><br />
+</ul>
+<h1>User deleted!</h1><br />
 
-<form action="delete_user.php" method="POST">
+
+
 <?php
 session_start();
 
@@ -67,8 +65,6 @@ $conn = mysqli_connect('127.0.0.1:3306', $username, $password, "droids");
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-
-$implosion = implode(":", $_SESSION["basket"]);
 if (!mysqli_query($conn, $sql))
 {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -79,22 +75,28 @@ if (!$conn)
 {
   die ("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT * FROM users";
+$del_user = $_POST['del_user'];
+print_r($del_user);
 
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0)
+
+foreach($del_user as $elem) 
 {
-	while($row = mysqli_fetch_assoc($result))
-		echo "username: " . $row["username"]. " - Admin: " . $row["adm"]. " <input type=\"checkbox\" id=\"selection\" name=\"del_user[]\" value=\"".$row["username"]."\"> <br /><br />";
+	$sql="DELETE FROM users WHERE username = '$elem'";
+	echo $sql."<br />";
+	if (mysqli_query($conn, $sql))
+	{
+	echo "Record deleted successfully";
+	}
+	else
+	{
+		echo "Error deleting record: " . mysqli_error($conn);
+	}
 }
+
+
 mysqli_close($conn);
+
 ?>
 
-<input type="submit" value="Delete user">
 </form>
-<form action="delete_user.php" method="POST">
-
-</form>
-
 </body></html>
-
