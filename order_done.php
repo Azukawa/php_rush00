@@ -15,7 +15,14 @@
 
 <?php
 session_start();
-echo "<p>You want to remove: ".$_POST['basket_item']." from your basket.</p><br />";
+//if ($_POST["submit"] === 'OK')
+$_SESSION['basket'] = array();
+unset($_SESSION['basket']);
+/*$var = $_SESSION['basket'];
+unset($var);*/
+header("location: login.php");
+exit;
+/*echo "<p>You want to remove: ".$_POST['basket_item']." from your basket.</p><br />";
 
 echo "Attempting to remove ".print_r($_POST['basket_item'])."<br />";
 $_SESSION['basket'] = array_diff($_SESSION['basket'],$_POST['basket_item']);
@@ -26,8 +33,7 @@ foreach ($_SESSION['basket'] as $elem)
 	echo "$elem<br />";
 }
 $view_basket = "<span>Cart===>	 <a href=\"view_basket.php\">View your cart</a>.</span>";
-echo $view_basket;
-
+echo $view_basket;*/
 ?>
 
 </form>
