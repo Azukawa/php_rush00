@@ -34,6 +34,39 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 				<option value="price">Price</option>
 			  </select>
 			  <input type="submit" name="submit" value="Search" />
+<form action="add_to_basket.php" method="POST">
+<?php
+//////////////////////
+////////////////////
+$username = "root";
+$password = "mampba";
+
+
+$conn = mysqli_connect('127.0.0.1:3306', $username, $password, "droids");
+if (!$conn)
+{
+  die ("Connection failed: " . mysqli_connect_error());
+}
+$sql = "SELECT * FROM droids";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0)
+{
+	while($row = mysqli_fetch_assoc($result))
+		echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. " credits <input type=\"checkbox\" id=\"selection\" name=\"droid[]\" value=\"".$row["id"]."\"> <br />";
+}
+mysqli_close($conn);
+//////////////////////////
+////////////////////////
+?>
+<div class="row">
+  <div class="column">
+    <img src="droid_pics/BB-8.jpg" alt="BB-8" style="width:20%">
+  	<img src="droid_pics/droideka.jpg" alt="droideka" style="width:20%">
+</div>
+  <div class="column">
+    <img src="droid_pics/and_droid.jpg" alt="and droid" style="width:20%">
+  </div>
+<input type="submit" value="Add to basket">
 		</form>
 </body></html>
 
