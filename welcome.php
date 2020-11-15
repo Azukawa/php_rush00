@@ -20,7 +20,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <body>
 <ul>
 	<li><a href="login.php">Login</a></li>
-	<li><a href="landing_page.php">Shop</a></li>
+	<li><a class="active" href="landing_page.php">Shop</a></li>
 	<li><a href="register.php">Register</a></li>
 	<li><a href="view_basket.php">Basket</a></li>
 	<li style="float:right"><a href="logout.php">LogOut</a></li>
