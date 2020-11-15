@@ -16,12 +16,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 			<link rel="stylesheet" href="rush.css">
 	</head>
 	<body>
-		<ul>
-			<li><a class="active"  href="#droids">Droids</a></li>
-			<li><a href="#search">Search</a></li>
-			<li><a href="#cart">Cart</a></li>
-			<li style="float:right"><a href="#logout">LogOut</a></li>
-		</ul>
+	<ul>
+	<li><a href="login.php">Login</a></li>
+	<li><a class="active "href="landing_page.php">Shop</a></li>
+	<li><a href="register.php">Register</a></li>
+	<li><a href="view_basket.php">Basket</a></li>
+	<li style="float:right"><a href="logout.php">LogOut</a></li>
+	</ul>
 		<span>Already have an account? <a href="login.php">Login here</a>.</span>
 		<span>Don't have an account? <a href="register.php">Sign up now</a>.</span>
 		<form action="search_product.php" method="POST">
