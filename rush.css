@@ -24,3 +24,39 @@ body{
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+li a {
+  display: block;
+  color: white;		/* change this to change the navbar text color */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover:not(.active){
+  background-color: #111;
+}
+.active {
+  font-weight: bold;
+  background-color: white;
+  color: #444;
+}
+
+li:last-child {
+  border-right: none;
+}
