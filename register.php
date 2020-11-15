@@ -102,10 +102,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
 <ul>
-	<li><a class="active"  href="#droids">Droids</a></li>
-	<li><a href="#search">Search</a></li>
-	<li><a href="#cart">Cart</a></li>
-	<li style="float:right"><a href="#logout">LogOut</a></li>
+	<li><a href="login.php">Login</a></li>
+	<li><a href="landing_page.php">Shop</a></li>
+	<li><a class="active" href="register.php">Register</a></li>
+	<li><a href="view_basket.php">Basket</a></li>
+	<li style="float:right"><a href="logout.php">LogOut</a></li>
 </ul>
     <div >
         <h2>Sign Up</h2>
