@@ -109,10 +109,12 @@ way to give this exclusive access to some users.*/
 </head>
 <body>
 <ul>
-	<li><a class="active"  href="welcome.php">Droids</a></li>
-	<li><a href="#search">Search</a></li>
-	<li><a href="#cart">Cart</a></li>
-	<li style="float:right"><a href="#logout">LogOut</a></li>
+	<li><a href="login.php">Login</a></li>
+	<li><a href="landing_page.php">Shop</a></li>
+	<li><a href="register.php">Register</a></li>
+	<li><a href="view_basket.php">Basket</a></li>
+	<li style="float:right"><a href="logout.php">LogOut</a></li>
+	<li class="active" style="float:right"><a href="admin.php">Admin</a></li>
 </ul>	
 <h1>Admin</h1><br />
 <p>Welcome to the Admin page, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>!</p>
