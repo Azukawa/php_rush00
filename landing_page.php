@@ -1,12 +1,14 @@
 <?php
-start_session();
+// Initialize the session
+session_start();
+ 
+// Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 {
     header("location: welcome.php");
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -33,3 +35,5 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 			  <input type="submit" name="submit" value="Search" />
 		</form>
 </body></html>
+
+
