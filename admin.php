@@ -19,10 +19,10 @@ $user = $_SESSION["username"];
 $admin = FALSE;
 // Prepare a select statement
 $sql = "SELECT username, adm FROM users WHERE username = '$user'";
-echo $sql."<br />";
+//echo $sql."<br />";
 $result = mysqli_query($conn, $sql);
 //print_r ($result);
-echo "<br />";
+//echo "<br />";
 if (mysqli_num_rows($result) > 0)
 {
   // output data of each row
@@ -44,6 +44,7 @@ if (mysqli_num_rows($result) > 0)
 		//echo "admin access: " . $row["admin"]." <br />";
 	}
 }
+mysqli_close($conn);
 if ($admin !== TRUE)
 {
 	header("location: welcome.php");

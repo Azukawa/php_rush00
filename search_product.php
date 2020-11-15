@@ -1,6 +1,6 @@
 <html><head>
     <meta charset="UTF-8">
-    <title>Sign Up</title>
+    <title>Search results</title>
     <link rel="stylesheet" href="rush.css">
 </head>
 <body><ul>

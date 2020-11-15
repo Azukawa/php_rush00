@@ -1,3 +1,18 @@
+<html><head>
+    <meta charset="UTF-8">
+    <title>Product deleted!</title>
+    <link rel="stylesheet" href="rush.css">
+</head>
+<body><ul>
+	<li><a class="active"  href="#droids">Droids</a></li>
+	<li><a href="#search">Search</a></li>
+	<li><a href="#cart">Cart</a></li>
+	<li style="float:right"><a href="#logout">LogOut</a></li>
+</ul>
+<h1>Product deleted!</h1><br />
+
+
+
 <?php
 session_start();
 ////print_r($_POST['basket_item']);
@@ -78,3 +93,6 @@ echo $view_basket;
 	echo $_SESSION[$basket];
 }*/
 ?>
+
+</form>
+</body></html>
