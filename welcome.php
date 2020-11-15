@@ -20,10 +20,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <body>
 <ul>
 	<li><a href="login.php">Login</a></li>
-	<li><a href="landing_page.php">Shop</a></li>
+	<li><a class="active" href="landing_page.php">Shop</a></li>
 	<li><a href="register.php">Register</a></li>
 	<li><a href="view_basket.php">Basket</a></li>
+	
 	<li style="float:right"><a href="logout.php">LogOut</a></li>
+	<li style="float:right"><a href="admin.php">Admin</a></li>
 </ul>
 <div>
         <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to the Jawa Junkyard. These ARE the droids you're looking for!</h1>
