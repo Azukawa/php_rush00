@@ -34,6 +34,14 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 			  </select>
 			  <input type="submit" name="submit" value="Search" />
 <form action="add_to_basket.php" method="POST">
+
+<br/><br/>
+Short<input type="checkbox" id="selection" name="[short]" value="[category_picked]"> 		
+
+Tall<input type="checkbox" id="selection" name="[tall]" value="[category_picked]">			
+Round<input type="checkbox" id="selection" name="[round]" value="[category_picked]">			
+xxx<input type="checkbox" id="selection" name="[category]" value="[category_picked]">			
+yyy<input type="checkbox" id="selection" name="[category]" value="[category_picked]">			
 <br/><br/>
 <?php
 //////////////////////
@@ -52,8 +60,11 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0)
 {
 	while($row = mysqli_fetch_assoc($result))
+	{
+	if($row)	
 		echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. " credits <input type=\"checkbox\" id=\"selection\" name=\"droid[]\" value=\"".$row["id"]."\"> <br />";
-}
+	
+	}
 mysqli_close($conn);
 //////////////////////////
 ////////////////////////
