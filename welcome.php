@@ -32,6 +32,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			Search by: <select name="search-by" id="search-by">
 				<option value="name">Name</option>
 				<option value="id">ID</option>
+				<option value="year">Year</option>
 				<option value="cat">Category</option>
 				<option value="price">Price</option>
 			  </select>

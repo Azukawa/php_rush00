@@ -15,7 +15,7 @@
 <form action="add_to_basket.php" method="POST">
 <?php
 
-echo "<p>You searched for:<br />Search terms: \"".$_POST['search_terms'] ."\" by: ". $_POST["search-by"]."</p><br />";
+echo "<h2>You searched for:</h2>Search terms: \"".$_POST['search_terms'] ."\" by: ". $_POST["search-by"]."</p><br />";
 
 if ($_POST["submit"] === 'Search' && $_POST['search_terms'] && $_POST['search-by'])
 {
@@ -33,8 +33,10 @@ if (!$conn)
 {
   die ("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT id, name, cat, price FROM droids";
+$sql = "SELECT id, name, year, price FROM droids";
+//echo $sql."<br />";
 $result = mysqli_query($conn, $sql);
+//print_r ($result);
 //$opt = "cat";
 //$optarg = "Tall";
 if (mysqli_num_rows($result) > 0)
@@ -45,7 +47,7 @@ if (mysqli_num_rows($result) > 0)
 	{
 //	echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Category: " . $row["cat"]. " - Price: " . $row["price"]. " credits\n";
 		if($row[$_POST['search-by']] === $_POST['search_terms']) /// here you can determine what you are searching for
-			echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Category: " . $row["cat"]. " - Price: " . $row["price"]. " credits <input type=\"checkbox\" id=\"selection\" name=\"droid[]\" value=\"".$row["id"]."\"> <br />";
+			echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. " credits <input type=\"checkbox\" id=\"selection\" name=\"droid[]\" value=\"".$row["id"]."\"> <br />";
 	}
 }
 else
@@ -55,8 +57,6 @@ else
 //print_r($result);
 mysqli_close($conn); // close connection.
 }
-else
-	echo "POST if no workey <br />";
 ?>
 
 <input type="submit" value="Add to basket">
