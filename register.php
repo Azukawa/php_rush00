@@ -99,12 +99,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <link rel="stylesheet" href="rush.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
 </head>
 <body>
+<ul>
+	<li><a class="active"  href="#droids">Droids</a></li>
+	<li><a href="#search">Search</a></li>
+	<li><a href="#cart">Cart</a></li>
+	<li style="float:right"><a href="#logout">LogOut</a></li>
+</ul>
     <div >
         <h2>Sign Up</h2>
         <p>Please complete this form to create your account.</p>

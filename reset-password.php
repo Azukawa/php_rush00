@@ -77,6 +77,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="rush.css">
 </head>
 <body>
+<ul>
+	<li><a class="active"  href="#droids">Droids</a></li>
+	<li><a href="#search">Search</a></li>
+	<li><a href="#cart">Cart</a></li>
+	<li style="float:right"><a href="#logout">LogOut</a></li>
+</ul>
     <div>
         <h2>Reset Password</h2>
         <p>Please fill out this form to reset your password.</p>

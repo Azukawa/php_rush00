@@ -1,4 +1,15 @@
-<html><body><h1>Search results</h1><br />
+<html><head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="rush.css">
+</head>
+<body><ul>
+	<li><a class="active"  href="#droids">Droids</a></li>
+	<li><a href="#search">Search</a></li>
+	<li><a href="#cart">Cart</a></li>
+	<li style="float:right"><a href="#logout">LogOut</a></li>
+</ul>
+<h1>Search results</h1><br />
 
 
 <form action="add_to_basket.php" method="POST">
@@ -47,6 +58,7 @@ mysqli_close($conn); // close connection.
 else
 	echo "POST if no workey <br />";
 ?>
-<input type="submit" value="Add to cart">
+
+<input type="submit" value="Add to basket">
 </form>
 </body></html>
