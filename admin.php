@@ -63,7 +63,7 @@ if ($admin !== TRUE)
 <p>Welcome to the Admin page, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>!</p>
 
 <p><a href="manage_users.php">Delete users</a></p>
-<p><a href="registration.php">Add users (registers new user)</a></p>
+<p><a href="register.php">Add users (registers new user)</a></p>
 <p><a href="view_orders.php">View orders</a></p>
 
 </body></html>

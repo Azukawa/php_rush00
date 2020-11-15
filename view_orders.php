@@ -14,7 +14,7 @@
 </ul>	
 <h1>Order Management</h1><br />
 
-<form action="delete_user.php" method="POST">
+<form action="delete_order.php" method="POST">
 <?php
 session_start();
 
@@ -120,9 +120,6 @@ mysqli_close($conn);
 ?>
 
 <input type="submit" value="Delete order">
-</form>
-<form action="delete_order.php" method="POST">
-
 </form>
 
 </body></html>
