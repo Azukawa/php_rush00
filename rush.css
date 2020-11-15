@@ -1,6 +1,8 @@
 body{ 
 	font: 14px sans-serif;
-   background-color: #FFE9A5;	
+	color: #626262;
+	background-color: #FFE9A5;
+
 }
 
 .wrapper{ 
@@ -65,6 +67,6 @@ li:last-child {
 /*
 	tan = #FFE9A5
 	grey = #C4C4C4
-	light grey= 
+	light grey = #dbdbdb
  
  */
