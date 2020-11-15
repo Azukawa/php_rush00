@@ -35,6 +35,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 			  </select>
 			  <input type="submit" name="submit" value="Search" />
 <form action="add_to_basket.php" method="POST">
+<br/><br/>
 <?php
 //////////////////////
 ////////////////////
